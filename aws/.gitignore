@@ -1,0 +1,44 @@
+# Terraform state & cache
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# Terraform plan
+tfplan
+
+# Overrides & sensitive vars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.tfvars
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+crash.log
+
+# IDE/editor
+.vscode/
+../.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Environment files
+.env
+
+terraform/envs/dev/1.general/_variables.tf
+terraform/envs/dev/3.database/_variables.tf
+terraform/envs/dev/5.monitoring/_variables.tf
