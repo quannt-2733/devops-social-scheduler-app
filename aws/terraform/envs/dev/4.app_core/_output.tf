@@ -17,3 +17,18 @@ output "ecs_service_name" {
   value = aws_ecs_service.api.name
   description = "Name of the ECS service"
 }
+
+output "lambda_function_name" {
+  description = "Name of the Lambda Worker"
+  value       = aws_lambda_function.worker.function_name
+}
+
+output "sqs_queue_name" {
+  description = "Name of the SQS Queue"
+  value       = aws_sqs_queue.schedule_queue.name
+}
+
+output "scheduler_group_name" {
+  description = "Name of the EventBridge Scheduler Group"
+  value       = aws_scheduler_schedule_group.group.name
+}
