@@ -36,7 +36,7 @@ data "terraform_remote_state" "app_core" {
   backend = "s3"
   config = {
     profile = "myproject-dev"
-    bucket  = "devops-social-scheduler-app-dev-iac-state" # Thay tên bucket
+    bucket  = "devops-social-scheduler-app-dev-iac-state"
     key     = "4.app_core/terraform.dev.tfstate"
     region  = "ap-southeast-1"
   }
