@@ -42,3 +42,4 @@ crash.log
 terraform/envs/dev/1.general/_variables.tf
 terraform/envs/dev/3.database/_variables.tf
 terraform/envs/dev/5.monitoring/_variables.tf
+terraform/envs/dev/4.app_core/_variables.tf

@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     profile        = "myproject-dev"
     bucket         = "devops-social-scheduler-app-dev-iac-state"
-    key            = "1.general/terraform.dev.tfstate"
+    key            = "3.database/terraform.dev.tfstate"
     region         = "ap-southeast-1"
     encrypt        = true
     kms_key_id     = "arn:aws:kms:ap-southeast-1:661075516353:key/9b837095-d2f7-4d05-9d8b-a724f1fe86a9"
@@ -31,4 +31,13 @@ provider "aws" {
   }
 }
 
-data "aws_caller_identity" "current" {}
+# Read remote state from general layer
+data "terraform_remote_state" "general" {
+  backend = "s3"
+  config = {
+    profile = "myproject-dev"
+    bucket  = "devops-social-scheduler-app-dev-iac-state"
+    key     = "1.general/terraform.dev.tfstate"
+    region  = "ap-southeast-1"
+  }
+}
